@@ -168,13 +168,21 @@ GitHub Actions is configured to automate:
 
 ### ✔ Pipeline triggers
 
-Every push to the **main branch** triggers:
+The CI/CD workflow is triggered only when relevant application or deployment files are updated.
+This prevents unnecessary builds and deployments caused by documentation or non-functional changes.
 
-1. Build updated Docker images
-2. Push images to Docker Hub
-3. SSH into EC2
-4. Pull latest images
-5. Restart containers
+The pipeline is configured to run on changes to:
+
+* Backend source code
+
+* Frontend source code
+
+* Dockerfiles and container configurations
+
+* Deployment and infrastructure configuration files
+
+Documentation updates such as README changes do not trigger the pipeline.
+This optimization improves efficiency, reduces cloud resource usage, and minimizes unnecessary compute and Docker Hub operations.
 
 ---
 
