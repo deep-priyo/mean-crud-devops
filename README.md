@@ -203,6 +203,27 @@ Example:
 
 ---
 
+
+## 💾 Persistent Database & Storage Optimization
+
+To ensure production reliability and prevent data loss, additional improvements were implemented in the infrastructure.
+
+### 🔹 MongoDB Persistent Storage
+
+Initially, MongoDB data was lost whenever Docker containers were restarted.  
+To solve this, a **named Docker volume** was configured:
+
+```yaml
+mongo:
+  image: mongo
+  container_name: mongo
+  restart: always
+  ports:
+    - "27017:27017"
+  volumes:
+    - mongo-data:/data/db
+```
+---
 ## 🔐 Security Considerations
 
 ✔ Docker containers isolated
@@ -210,7 +231,7 @@ Example:
 ✔ SSH secure access
 ✔ Secrets managed using GitHub Actions
 ✔ Reverse proxy architecture
-
+---
 ## 📸 Screenshots & Demonstration
 
 ### 🔹 1. Application UI – Cloud Deployment
