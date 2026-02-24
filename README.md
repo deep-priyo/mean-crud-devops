@@ -187,9 +187,20 @@ Nginx is configured to:
 * Hide internal container ports
 * Enable production-style deployment
 
-Users access the system via:
-http://<EC2-public-IPv4-address>
-(e.g., http://13.127.148.3/)
+---
+### 🌐 Application Access
+
+Users can access the deployed application using the EC2 public IPv4 address:
+
+`http://<EC2-public-ipv4-address>`
+
+Example:
+
+`http://13.127.148.3`
+
+> ⚠️ Note: The public IPv4 address of the EC2 instance is dynamic and may change when the instance is stopped and restarted.  
+> In a production environment, this would typically be resolved by using an **Elastic IP or a custom domain with DNS mapping and HTTPS (SSL)**.
+
 ---
 
 ## 🔐 Security Considerations
