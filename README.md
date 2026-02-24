@@ -189,6 +189,7 @@ Nginx is configured to:
 
 Users access the system via:
 http://<EC2-public-IPv4-address>
+(e.g., http://13.127.148.3/)
 ---
 
 ## 🔐 Security Considerations
